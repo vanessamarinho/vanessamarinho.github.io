@@ -6,6 +6,9 @@ angular.module('myPageApp', [])
   $scope.menu.people = ['Pessoas','People'];
   $scope.menu.interesting = ['Links Interessantes','Interesting Links'];
   
+  $scope.page = {}
+  $scope.page.title=['Reconhecimento de Autoria com Redes Complexas','Authorship Recognition with Complex Networks'];
+  
   /*0 stands for portuguese*/
   $scope.language = 0;
   
