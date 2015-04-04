@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="myPageApp">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
 
 <head>
 
@@ -13,6 +14,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/mypage.css" rel="stylesheet">
+	<link href="css/fontawesome.min.css" rel="stylesheet">
+	<link rel="icon" href="teste.ico" type="image/ico" sizes="16x16">
 
 	
     <!-- jQuery -->
@@ -108,16 +111,18 @@
 
         <hr>
 
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="row" style="display: center;"> 
+            <div class="col-sm-3">
                 <img class="img-circle img-responsive img-center" src="vanessa.png" alt="">
-                <h2>Vanessa Queiroz Marinho</h2>
-                <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+                <h2>Vanessa Marinho</h2>
+                <p>{{menu.people.vanessa[language]}}<p>
+				<p><i class="fa fa-envelope-o"></i></p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-                <h2>Marketing Box #2</h2>
-                <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <h2>Diego Amancio</h2>
+                <p>{{menu.people.diego[language]}}</p>
+				<p><i class="fa fa-envelope-o"></i></p>
             </div>
         </div>
         <!-- /.row -->
