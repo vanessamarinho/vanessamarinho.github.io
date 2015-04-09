@@ -46,13 +46,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" style="float: right">
                     <li>
-                        <a href="#">{{menu.research[language]}}</a>
+                        <a href="#" id="research">{{menu.research[language]}}</a>
                     </li>
                     <li>
-                        <a href="#">{{menu.people[language]}}</a>
+                        <a href="#" id="people">{{menu.people[language]}}</a>
                     </li>
                     <li>
-                        <a href="#">{{menu.interesting[language]}}</a>
+                        <a href="#" id="interesting">{{menu.interesting[language]}}</a>
                     </li>
 					<li class="english"  style="padding-top: 13px;">
 						<span>
@@ -82,7 +82,7 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-10 col-sm-offset-1">
                 <h2>What We Do</h2>
                 <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
@@ -95,19 +95,21 @@
 
         <hr>
 
-        <div class="row"> 
-            <div class="col-sm-3">
-                <img class="img-circle img-responsive img-center" src="vanessa.png" alt="">
-                <h2>Vanessa Marinho</h2>
-                <p>{{menu.people.vanessa[language]}}<p>
-				<p><i class="fa fa-envelope-o"></i></p>
-            </div>
-            <div class="col-sm-3">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-                <h2>Diego Amancio</h2>
-                <p>{{menu.people.diego[language]}}</p>
-				<p><i class="fa fa-envelope-o"></i></p>
-            </div>
+        <div class="row" ng-if="clickedValue ==2"> 
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="col-sm-4 col-sm-offset-2">
+					<img class="img-circle img-responsive img-center" src="vanessa.png" alt="">
+					<h2>Vanessa Marinho</h2>
+					<p>{{menu.people.vanessa[language]}}<p>
+					<p><i class="fa fa-envelope-o"></i></p>
+				</div>
+				<div class="col-sm-4">
+					<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+					<h2>Diego Amancio</h2>
+					<p>{{menu.people.diego[language]}}</p>
+					<p><i class="fa fa-envelope-o"></i></p>
+				</div>
+			</div>
         </div>
         <!-- /.row -->
 
@@ -117,7 +119,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>USP e CAPES</p>
                 </div>
             </div>
             <!-- /.row -->
