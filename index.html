@@ -80,8 +80,9 @@
     </header>
 
     <!-- Page Content -->
-    <div class="container">
-        <div class="row">
+    <div class="container" id="pageContent">
+        <div class="row" ng-if="clickedValue ==1"> 
+            <hr>
             <div class="col-sm-10 col-sm-offset-1">
                 <h2>What We Do</h2>
                 <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
@@ -91,12 +92,11 @@
                 </p>
             </div>
         </div>
-        <!-- /.row -->
-
-        <hr>
-
+        
         <div class="row" ng-if="clickedValue ==2"> 
+            <hr>
 			<div class="col-sm-10 col-sm-offset-1">
+                <h2>{{menu.people[language]}}</h2>
 				<div class="col-sm-4 col-sm-offset-2">
 					<img class="img-circle img-responsive img-center" src="vanessa.png" alt="">
 					<h2>Vanessa Marinho</h2>
@@ -111,9 +111,6 @@
 				</div>
 			</div>
         </div>
-        <!-- /.row -->
-
-        <hr>
 
         <!-- Footer -->
         <footer>

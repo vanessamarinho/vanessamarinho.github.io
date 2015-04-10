@@ -35,11 +35,12 @@
   });
   
    $("#people").click(function(e){
-	$scope.clickedValue = 2;
-	$scope.$apply();
-	$('html, body').animate({
-        scrollTop: $("#people").offset().top
-    }, 200);
+    	$scope.clickedValue = 2;
+    	$scope.$apply();
+    	$('html, body').animate({
+            scrollTop: $("#pageContent").offset().top
+        }, 500);
+
   });
   
    $("#interesting").click(function(e){
