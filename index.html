@@ -52,6 +52,9 @@
                         <a href="#" id="people">{{menu.people[language]}}</a>
                     </li>
                     <li>
+                        <a href="#" id="results">{{menu.results[language]}}</a>
+                    </li>
+                    <li>
                         <a href="#" id="interesting">{{menu.interesting[language]}}</a>
                     </li>
 					<li class="english"  style="padding-top: 13px;">
@@ -60,6 +63,7 @@
 						<a id="portuguese" style="display:inline-block"><img src="portuguese.png"></a>
 						</span>
                     </li>
+                    <li><i class="fa fa-home fa-2x" style="color:white; margin-top: 10px; margin-left: 10px;" id="home"></i></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -81,18 +85,55 @@
 
     <!-- Page Content -->
     <div class="container" id="pageContent">
-        <div class="row" ng-if="clickedValue ==1"> 
+        <div class="row" ng-if="clickedValue ==0"> 
             <hr>
             <div class="col-sm-10 col-sm-offset-1">
-                <h2>Teste</h2>
-                <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
-                <p>
-                    <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
-                </p>
+                <h2>{{project.summary.title[language]}}</h2>
+                <p>{{project.summary.content[language]}}</p>
+                {{project.summary.moreInfo[language]}} <a href="#" ng-click="research()">{{words.here[language]}}</a>
             </div>
         </div>
         
+        <div class="row" ng-if="clickedValue ==1"> 
+            <hr>
+            <div class="col-sm-10 col-sm-offset-1">
+                <h2>{{project.information[language]}}</h2>
+                <br/>
+                <ol>
+                <li><h4><b>{{project.title.title[language]}}</b></h4></li>
+                <p>{{project.title.content[language]}}</p>
+                <li><h4><b>{{project.theme.title[language]}}</b></h4>
+                	<p>1. {{project.theme.content[language][0]}} <br/>
+                	&nbsp; 1.1. {{project.theme.content[language][1]}} <br/>
+                	&nbsp; &nbsp; 1.1.1. {{project.theme.content[language][2]}} <br/>
+                	&nbsp; &nbsp; &nbsp; 1.1.1.1. {{project.theme.content[language][3]}}</p>
+                </li>
+
+                <li><h4><b>{{project.problem.title[language]}}</b></h4></li>
+                <p>{{project.problem.content[language]}}</p>
+
+                <li><h4><b>{{project.hypotheses.title[language]}}</b></h4>
+	                <ol>
+	                	<li>{{project.hypotheses.content[language][0]}}</li>
+	                	<li>{{project.hypotheses.content[language][1]}}</li>
+	                	<li>{{project.hypotheses.content[language][2]}}</li>
+	                </ol>
+                </li>
+
+                <li><h4><b>{{project.goal.title[language]}}</b></h4></li>
+                <p>{{project.goal.content[language]}}</p>
+
+                <li><h4><b>{{project.motivation.title[language]}}</b></h4></li>
+                <p>{{project.motivation.content[language]}}</p>
+
+                <li><h4><b>{{project.summary.title[language]}}</b></h4></li>
+                <p>{{project.summary.content[language]}}</p>
+                </ol>
+                <p><b>*</b> - {{project.footnote[language][0]}}</p>
+                <p><b>**</b> - {{project.footnote[language][1]}}</p>
+            </div>
+        </div>
+
         <div class="row" ng-if="clickedValue ==2"> 
             <hr>
 			<div class="col-sm-10 col-sm-offset-1">
@@ -114,11 +155,29 @@
 			</div>
         </div>
 
+        <div class="row" ng-if="clickedValue ==3"> 
+            <hr>
+            <div class="col-sm-10 col-sm-offset-1">
+                <h2>{{words.firstResults[language]}}</h2>
+            </div>
+        </div>
+
+        <div class="row" ng-if="clickedValue ==4"> 
+            <hr>
+            <div class="col-sm-10 col-sm-offset-1">
+                Links
+            </div>
+        </div>
+
         <!-- Footer -->
+        <br/><br/><br/><br/><br/><br/>
         <footer>
             <div class="row">
-                <div class="col-lg-12">
-                    <p>USP e CAPES</p>
+                <div class="col-lg-10">
+                	<p class="col-sm-2 col-sm-offset-1"><b>{{words.thanks[language]}} </b></p>
+                    <img src="brasao_usp.jpg" class="col-sm-2"/>
+                    <img src="capes.jpg" class="col-sm-2"/>
+                    <img src="nilc.png" class="col-sm-2" style="margin-top:10px; margin-left: 14px;"/>
                 </div>
             </div>
             <!-- /.row -->
