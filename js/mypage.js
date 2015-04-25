@@ -1,4 +1,4 @@
-﻿angular.module('myPageApp', [])
+﻿angular.module('myPageApp', ['FBAngular'])
   .controller('languageController',['$scope', function($scope) {
   $scope.menu = {};
   $scope.project = {};
