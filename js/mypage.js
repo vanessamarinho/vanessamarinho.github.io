@@ -1,25 +1,33 @@
 ﻿angular.module('myPageApp', ['FBAngular'])
   .controller('languageController',['$scope', function($scope) {
+  //Content from each section
   $scope.menu = {};
   $scope.project = {};
+  $scope.people = {};
+  $scope.production = {};
   
+  //Words
   $scope.words = {};
   $scope.words.here = ['aqui', 'here'];
   $scope.words.thanks = ['Agradecimentos:', 'Special Thanks:'];
   $scope.words.firstResults = ['Resultados Preliminares', 'First Results'];
-
+  $scope.words.production = ["Produção Bibliográfica", "Bibliographical Production"];
+  $scope.words.relatedPublication = ["Publicações Relacionadas","Related Publications"];
+  $scope.words.student= ["Aluna de Mestrado","Master's candidate"];
+  $scope.words.supervisor= ["Orientador","Supervisor"];
 
   $scope.clickedValue = 0;
   
   $scope.menu.research = ['Pesquisa','Research'];
   $scope.menu.people = ['Pessoas','People'];
-  $scope.menu.interesting = ['Links Interessantes','Interesting Links'];
+  $scope.menu.interesting = ['Links','Links'];
   $scope.menu.results = ["Resultados","Results"];
+  $scope.menu.publications = ["Publicações","Publications"];
 
 
-  $scope.menu.people.vanessa = ['Estudante de mestrado na Universidade de São Paulo (USP). Vanessa é formada em Ciências da Computação pela USP e foi aluna visitante na Universidade de Toronto pelo programa Ciência sem Fronteiras por um ano.',
+  $scope.people.vanessa = ['Estudante de mestrado na Universidade de São Paulo (USP). Vanessa é formada em Ciências da Computação pela USP e foi aluna visitante na Universidade de Toronto pelo programa Ciência sem Fronteiras por um ano.',
   "Master's candidate at University of São Paulo (USP). Vanessa did her undergraduate course in Computer Science at USP. She was an exchange student at University of Toronto through the Science without Borders' program"];
-  $scope.menu.people.diego = ['Professor Doutor da Universidade de São Paulo (USP). Diego é formado em Engenharia de Computação pela USP e Doutor também pela USP. Sua tese de doutorado recebeu o Prêmio Tese Destaque USP.',
+  $scope.people.diego = ['Professor Doutor da Universidade de São Paulo (USP). Diego é formado em Engenharia de Computação pela USP e Doutor também pela USP. Sua tese de doutorado recebeu o Prêmio Tese Destaque USP.',
   "Professor at University of São Paulo (USP). Diego did his undergraduate course in Computer Engineering at USP and he received his PhD at USP. His PhD thesis was selected as the best one at USP between 2012 and 2013."];
   
   
@@ -38,7 +46,6 @@
   $scope.project.title = {};
   $scope.project.title.title = ['Título', 'Title'];
   $scope.project.title.content = [];
-
 
   $scope.project.theme = {};
   $scope.project.theme.title = ['Tema', 'Theme'];
@@ -65,6 +72,9 @@
   $scope.project.motivation.title = ['Motivação','Motivation'];
   $scope.project.motivation.content = ['A tarefa de reconhecimento de autoria tem sido estudada com sucesso através da representação de redes de adjacência de palavras. Nos últimos anos, a quantidade de textos disponíveis e de fácil acesso na Web revelou o potencial da análise de autoria em diferentes aplicações. Esta tarefa é bastante relevante dentro da área de processamento de línguas naturais contribuindo para diversos avanços na literatura [18], história [19], serviços de inteligência [14], computação forense [16, 20] e também em investigações criminais [21] ou até mesmo para interceptar mensagens terroristas [14]. Outra aplicação se dá no contexto do plagiarismo, pois é possível identificar trechos de plágios e inconsistências estilísticas a partir da tarefa de verificação de autoria. A importância desta tarefa se torna ainda mais evidente também quando se deseja estimar a similaridade de textos.',
   "The authorship recognition task has been successfully studied through the representation of words in adjacent networks. In the last few years, the amount of available and accessible text on the Web revealed the potential of authorship analysis in different applications. This task is very important in the natural language processing area, contributing to many advances in the literature [18], [19] history, intelligence services [14], computer forensics [16, 20] as well as in criminal investigations [21] or even intercepting terrorist messages [14]. Another application is in the context of plagiarism, it is possible to identify plagiarism and stylistic inconsistencies with the usage of an authorship verification task. The importance of this task becomes even more evident when one desires to estimate the similarity of texts."];
+
+$scope.production.firstContent = ["Por estar em um estágio inicial da pesquisa, esse projeto ainda não resultou em nenhuma publicação.  No próximo tópico, são apresentas algumas publicações relacionadas.","As we are at an early research stage, this project hasn't produced any publication yet. Take a look at the following topic to find some related publications."]
+$scope.production.secondContent = ["A seguir, alguns artigos, teses e dissertações relacionados ao projeto são apresentados.  Vale a pena destacar que muitos desses trabalhos são do professor Dr. Diego Amancio.", "In this topic, some publications, theses and dissertations related to this project are presented. It is worth noting that many of these works are results of Professor Diego Amancio’s research work."];
 
   var scroll = function(){
 
@@ -114,14 +124,20 @@ $("#home").click(function(e){
   });
 
    $("#results").click(function(e){
-    $scope.clickedValue = 3;
-    $scope.$apply();
-    scroll();
+      $scope.clickedValue = 3;
+      $scope.$apply();
+      scroll();
   });
   
     $("#interesting").click(function(e){
-    $scope.clickedValue = 4;
-    $scope.$apply();
-    scroll();
+      $scope.clickedValue = 4;
+      $scope.$apply();
+      scroll();
+  });
+
+    $("#publications").click(function(e){
+      $scope.clickedValue = 5;
+      $scope.$apply();
+      scroll();
   });
 }]);
