@@ -5,6 +5,7 @@
   $scope.project = {};
   $scope.people = {};
   $scope.production = {};
+  $scope.links = {};
   
   //Words
   $scope.words = {};
@@ -15,6 +16,9 @@
   $scope.words.relatedPublication = ["Publicações Relacionadas","Related Publications"];
   $scope.words.student= ["Aluna de Mestrado","Master's candidate"];
   $scope.words.supervisor= ["Orientador","Supervisor"];
+  $scope.words.interestingLinks = ["Outros Links","Other Links"];
+  $scope.words.books = ["Livros","Books"];
+  $scope.words.linkedIn = ["Rede do LinkedIn","LinkedIn Network"];
 
   $scope.clickedValue = 0;
   
@@ -75,6 +79,12 @@
 
 $scope.production.firstContent = ["Por estar em um estágio inicial da pesquisa, esse projeto ainda não resultou em nenhuma publicação.  No próximo tópico, são apresentas algumas publicações relacionadas.","As we are at an early research stage, this project hasn't produced any publication yet. Take a look at the following topic to find some related publications."]
 $scope.production.secondContent = ["A seguir, alguns artigos, teses e dissertações relacionados ao projeto são apresentados.  Vale a pena destacar que muitos desses trabalhos são do professor Dr. Diego Amancio.", "In this topic, some publications, theses and dissertations related to this project are presented. It is worth noting that many of these works are results of Professor Diego Amancio’s research work."];
+
+
+$scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and its application on Natural Language Processing, we suggest the following books:"];
+$scope.links.sample = ["Algumas páginas do livro estão disponíveis ","A sample of the book is available "];
+$scope.links.linkedInInitial = [" A imagem utilizada no topo deste site é uma rede real obtida através de conexões no LinkedIn. Essa imagem foi extraída a partir do perfil da estudante Vanessa Marinho, em 1º de Abril.  Cada vértice representa um usuário conectado com a Vanessa. Uma areasta é criada toda vez que dois usuários estão também conectados entre si. Uma imagem mais abrangente é apresentada abaixo. ",
+"The header image from this website is a real network extracted from LinkedIn connections. This image was extracted at April, 1st from Vanessa Marinho LinkedIn profile. Each node represents a user connected to Vanessa through the social media, a link is created everytime two users are connected to each other on Linked. A more complete image is presented below. "];
 
   var scroll = function(){
 
