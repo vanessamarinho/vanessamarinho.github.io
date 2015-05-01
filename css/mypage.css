@@ -27,5 +27,6 @@ footer {
 .image {
 
  cursor: pointer; cursor: hand;
+ border:2px solid #021a40;
 
 }

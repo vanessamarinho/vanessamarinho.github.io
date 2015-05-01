@@ -177,6 +177,7 @@
             </div>
         </div>
 
+        <!-- LINKS -->
         <div class="row" ng-if="clickedValue ==4"> 
             <hr>
             <div class="col-sm-10 col-sm-offset-1">
@@ -191,11 +192,22 @@
                     </li>
                 </ul>
                 <h3>{{words.linkedIn[language]}}</h3>
-                <p>{{links.linkedInInitial[language]}}</p>
+                <p>{{links.linkedInInitial[language]}}</p><br/>
                 <img src="LinkedIn.png" class="image" style="width:550px;" fullscreen>
+                <br/>
+                <br/>
+                <p>{{links.linkedInMiddle.firstContent[language]}}<a href= "http://socilab.com/#home" target= "_blank">Socilab</a>. {{links.linkedInMiddle.secondContent[language]}} </p>
+                <ul>
+                    <li><b>{{words.density[language]}}:</b> {{links.density[language]}}</li><br/>
+                    <li><b>{{words.absolute[language]}}:</b> {{links.absolute[language]}}</li><br/>
+                    <li><b>{{words.effective[language]}}:</b> {{links.effective[language]}}</li><br/>
+                </ul>
+                <br/>
+                <br/>
+                <p>{{links.conclusion[language]}}</p>
             </div>
         </div>
-
+        <!-- ARTIGOS -->
         <div class="row" ng-if="clickedValue ==5"> 
             <hr>
             <div class="col-sm-10 col-sm-offset-1">

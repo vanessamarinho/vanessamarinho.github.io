@@ -20,6 +20,10 @@
   $scope.words.interestingLinks = ["Outros Links","Other Links"];
   $scope.words.books = ["Livros","Books"];
   $scope.words.linkedIn = ["Rede do LinkedIn","LinkedIn Network"];
+  $scope.words.density = ["Densidade","Density"];
+  $scope.words.absolute = ["Tamanho Absoluto","Absolute Size"];
+  $scope.words.effective = ["Tamanho Efetivo","Effective Size"];
+
 
   $scope.clickedValue = 0;
   
@@ -83,10 +87,24 @@ $scope.production.firstContent = ["Por estar em um estágio inicial da pesquisa,
 $scope.production.secondContent = ["A seguir, alguns artigos, teses e dissertações relacionados ao projeto são apresentados.  Vale a pena destacar que muitos desses trabalhos são do professor Dr. Diego Amancio.", "In this topic, some publications, theses and dissertations related to this project are presented. It is worth noting that many of these works are results of Professor Diego Amancio’s research work."];
 
 
-$scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and its application on Natural Language Processing, we suggest the following books:"];
+$scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and their application on Natural Language Processing, we suggest the following books:"];
 $scope.links.sample = ["Algumas páginas do livro estão disponíveis ","A sample of the book is available "];
 $scope.links.linkedInInitial = [" A imagem utilizada no topo deste site é uma rede real obtida através de conexões no LinkedIn. Essa imagem foi extraída a partir do perfil da estudante Vanessa Marinho, em 1º de Abril.  Cada vértice representa um usuário conectado com a Vanessa. Uma aresta é criada toda vez que dois usuários estão também conectados entre si. Uma imagem mais abrangente é apresentada abaixo. ",
-"The header image from this website is a real network extracted from LinkedIn connections. This image was extracted at April, 1st from Vanessa Marinho LinkedIn profile. Each node represents a user connected to Vanessa through the social media, a link is created everytime two users are connected to each other on Linked. A more complete image is presented below. "];
+"The header image from this website is a real network extracted from LinkedIn connections. This image was extracted at April, 1st from Vanessa Marinho LinkedIn profile. Each node represents a user connected to Vanessa through the social media, a link is created everytime two users are connected to each other on LinkedIn. A more complete image is presented below. "];
+$scope.links.linkedInMiddle = {};
+$scope.links.linkedInMiddle.firstContent = ["A rede foi extraída utilizando a aplicação ","The network was extracted using the aplication "];
+$scope.links.linkedInMiddle.secondContent = ["É necessário apenas conectar em seu perfil do LinkedIn e a aplicação irá criar sua rede social (esse processo pode levar alguns minutos). A aplicação também calcula algumas medidas em sua rede social, como densidade, tamanho absoluto e tamanho efetivo.",
+"You just need to sign in with your LinkedIn account and the application will create your social network (it may take a while). The application also calculates some measurements in your social network, like density, absolute size and effective size."];
+
+$scope.links.density = ["Este valor representa o número de conexões entre os contatos de um usuário dividido pelo número total de possíveis conexões. Valores próximos a 100% significam que todos (ou quase todos) os contatos estão ligados entre si. Por outro lado, valores próximos a 0 indicam um grande número de contatos desconexos uns dos outros. O valor calculado para a rede da Vanessa Marinho foi 11.4%",
+"This value represents the number of ties between a user’s contacts divided by the total number of possible ties. If you get a value closer to 100%, it means that all the contacts know each other. On the other hand, as the value approaches to 0%, it means all of your contacts are disconnected from each other. The value calculated in Vanessa`s network was 11.4%"];
+$scope.links.absolute = ["O número total de contatos que um usuário no LinkedIn possui. Este não é um valor muito representativo. A informação e oportunidades disponíveis em uma rede social estão mais relacionadas com a estrutura das conexões entre os contatos do que com o número total de contatos. O valor calculado para a rede da Vanessa foi 195, no dia 1º de Abril.",
+"The total number of contacts a LinkedIn user has. It is not a value really useful. The information and opportunities in a social network are correlated with the structure of the ties between the contacts, not with their raw number. In Vanessa`s network, this value was 195 at April 1st."];
+$scope.links.effective = ["Representa o tamanho efetivo de elementos na rede de um usuário. Em uma rede social, nem todo contato adiciona o mesmo valor para a rede. Algumas conexões entre usuários são redundantes. Portanto, essas conexões não estão verdadeiramente adicionando informação. Esta medida fornece uma estimativa do número único de clusters (grupos) que o usuário está conectado. O valor calculado para a rede da Vanessa foi 106.5, no dia 1º de Abril.",
+"The ‘effective’ size of a user’s network. In a social network, not every contact adds the same value to the network. Some ties between users are 'redundant'. Therefore, these ties are not actually providing extra information. This measure gives an estimate of the unique number of clusters a user is connected to. In Vanessa`s network, this value was 106.5 at April 1st."];
+ 
+$scope.links.conclusion = ["Para finalizar, outro aspecto interessante dessa aplicação é a possibilidade de exportar um arquivo CSV com os dados da rede de contatos do LinkedIn. Esses dados podem depois ser utilizados em outros sistemas ou para o cálculo de outras medidas. ",
+"Another interesting thing on this application is the possibility to export a CSV file with the data from the LinkedIn network. This data can later be used in other systems and to extract other measurements. "];
 
   var scroll = function(){
 
