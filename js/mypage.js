@@ -15,6 +15,7 @@
   $scope.words.production = ["Produção Bibliográfica", "Bibliographical Production"];
   $scope.words.relatedPublication = ["Publicações Relacionadas","Related Publications"];
   $scope.words.student= ["Aluna de Mestrado","Master's candidate"];
+  $scope.words.studentM= ["Aluno de Mestrado","Master's candidate"];
   $scope.words.supervisor= ["Orientador","Supervisor"];
   $scope.words.interestingLinks = ["Outros Links","Other Links"];
   $scope.words.books = ["Livros","Books"];
@@ -29,11 +30,12 @@
   $scope.menu.publications = ["Publicações","Publications"];
 
 
-  $scope.people.vanessa = ['Estudante de mestrado na Universidade de São Paulo (USP). Vanessa é formada em Ciências da Computação pela USP e foi aluna visitante na Universidade de Toronto pelo programa Ciência sem Fronteiras por um ano.',
-  "Master's candidate at University of São Paulo (USP). Vanessa did her undergraduate course in Computer Science at USP. She was an exchange student at University of Toronto through the Science without Borders' program"];
+  $scope.people.vanessa = ['Estudante de mestrado na Universidade de São Paulo. Vanessa é formada em Ciências da Computação pela USP.Também foi aluna visitante na Universidade de Toronto pelo programa Ciência sem Fronteiras por um ano.',
+  "Master's candidate at University of São Paulo. Vanessa did her undergraduate course in Computer Science at USP. She was an exchange student at University of Toronto through the Science without Borders' program."];
   $scope.people.diego = ['Professor Doutor da Universidade de São Paulo (USP). Diego é formado em Engenharia de Computação pela USP e Doutor também pela USP. Sua tese de doutorado recebeu o Prêmio Tese Destaque USP.',
   "Professor at University of São Paulo (USP). Diego did his undergraduate course in Computer Engineering at USP and he received his PhD at USP. His PhD thesis was selected as the best one at USP between 2012 and 2013."];
-  
+  $scope.people.edilson = ["Estudante de mestrado na Universidade de São Paulo. Edilson é formado em Ciências da Computação pelo Centro Universitário de Formiga (UNIFOR-MG). Seu projeto de mestrado também utiliza redes complexas aplicadas ao PLN.",
+  "Master's candidate at University of São Paulo. Edilson did his undergraduate course in Computer Science at Centro Universitário de Formiga (UNIFOR-MG). His Master’s project also uses complex networks applied to NLP."];
   
   $scope.page = {}
   $scope.page.title=['Reconhecimento de Autoria com Redes Complexas','Authorship Recognition with Complex Networks'];
@@ -83,7 +85,7 @@ $scope.production.secondContent = ["A seguir, alguns artigos, teses e dissertaç
 
 $scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and its application on Natural Language Processing, we suggest the following books:"];
 $scope.links.sample = ["Algumas páginas do livro estão disponíveis ","A sample of the book is available "];
-$scope.links.linkedInInitial = [" A imagem utilizada no topo deste site é uma rede real obtida através de conexões no LinkedIn. Essa imagem foi extraída a partir do perfil da estudante Vanessa Marinho, em 1º de Abril.  Cada vértice representa um usuário conectado com a Vanessa. Uma areasta é criada toda vez que dois usuários estão também conectados entre si. Uma imagem mais abrangente é apresentada abaixo. ",
+$scope.links.linkedInInitial = [" A imagem utilizada no topo deste site é uma rede real obtida através de conexões no LinkedIn. Essa imagem foi extraída a partir do perfil da estudante Vanessa Marinho, em 1º de Abril.  Cada vértice representa um usuário conectado com a Vanessa. Uma aresta é criada toda vez que dois usuários estão também conectados entre si. Uma imagem mais abrangente é apresentada abaixo. ",
 "The header image from this website is a real network extracted from LinkedIn connections. This image was extracted at April, 1st from Vanessa Marinho LinkedIn profile. Each node represents a user connected to Vanessa through the social media, a link is created everytime two users are connected to each other on Linked. A more complete image is presented below. "];
 
   var scroll = function(){
