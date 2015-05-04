@@ -1,5 +1,6 @@
 ﻿angular.module('myPageApp', ['FBAngular'])
   .controller('languageController',['$scope', function($scope) {
+  $scope.imageLoaded = false;
   //Content from each section
   $scope.menu = {};
   $scope.project = {};
@@ -23,7 +24,12 @@
   $scope.words.density = ["Densidade","Density"];
   $scope.words.absolute = ["Tamanho Absoluto","Absolute Size"];
   $scope.words.effective = ["Tamanho Efetivo","Effective Size"];
-
+  $scope.words.resources = ["Recursos","Resources"];
+  $scope.words.contact = ["Contato","Contact"];
+  $scope.words.nilc = ["Núcleo Interinstitucional de Linguística Computacional","Interinstitutional Center for Computational Linguistics"];
+  $scope.words.usp = ["Universidade de São Paulo","University of São Paulo"];
+  $scope.words.brasil = ["Brasil","Brazil"];
+  $scope.words.room = ["Sala","Room"];
 
   $scope.clickedValue = 0;
   
@@ -32,6 +38,8 @@
   $scope.menu.interesting = ['Links','Links'];
   $scope.menu.results = ["Resultados","Results"];
   $scope.menu.publications = ["Publicações","Publications"];
+  $scope.menu.resources = ["Recursos","Resources"];
+  $scope.menu.contact = ["Contato","Contact"];
 
 
   $scope.people.vanessa = ['Estudante de mestrado na Universidade de São Paulo. Vanessa é formada em Ciências da Computação pela USP.Também foi aluna visitante na Universidade de Toronto pelo programa Ciência sem Fronteiras por um ano.',
@@ -55,7 +63,14 @@
 
   $scope.project.title = {};
   $scope.project.title.title = ['Título', 'Title'];
-  $scope.project.title.content = [];
+  $scope.project.title.content = ["Desenvolvimento de novos modelos para reconhecimento de autoria com a utilização de redes complexas.", "Development of new models for authorship recognition using complex networks."];
+
+  $scope.project.date = {};
+  $scope.project.date.title = ['Datas', 'Dates'];
+  $scope.project.date.subtitle1 = ['Data de Início',"Start Date"];
+  $scope.project.date.subtitle2 = ['Data Esperada de Defesa',"Defense Expected Date"];
+  $scope.project.date.content1 = ['Fevereiro de 2015',"February of 2015"];
+  $scope.project.date.content2 = ['Fevereiro de 2017',"February of 2017"];
 
   $scope.project.theme = {};
   $scope.project.theme.title = ['Tema', 'Theme'];
@@ -80,12 +95,31 @@
 
   $scope.project.motivation = {};
   $scope.project.motivation.title = ['Motivação','Motivation'];
-  $scope.project.motivation.content = ['A tarefa de reconhecimento de autoria tem sido estudada com sucesso através da representação de redes de adjacência de palavras. Nos últimos anos, a quantidade de textos disponíveis e de fácil acesso na Web revelou o potencial da análise de autoria em diferentes aplicações. Esta tarefa é bastante relevante dentro da área de processamento de línguas naturais contribuindo para diversos avanços na literatura [18], história [19], serviços de inteligência [14], computação forense [16, 20] e também em investigações criminais [21] ou até mesmo para interceptar mensagens terroristas [14]. Outra aplicação se dá no contexto do plagiarismo, pois é possível identificar trechos de plágios e inconsistências estilísticas a partir da tarefa de verificação de autoria. A importância desta tarefa se torna ainda mais evidente também quando se deseja estimar a similaridade de textos.',
-  "The authorship recognition task has been successfully studied through the representation of words in adjacent networks. In the last few years, the amount of available and accessible text on the Web revealed the potential of authorship analysis in different applications. This task is very important in the natural language processing area, contributing to many advances in the literature [18], [19] history, intelligence services [14], computer forensics [16, 20] as well as in criminal investigations [21] or even intercepting terrorist messages [14]. Another application is in the context of plagiarism, it is possible to identify plagiarism and stylistic inconsistencies with the usage of an authorship verification task. The importance of this task becomes even more evident when one desires to estimate the similarity of texts."];
+  $scope.project.motivation.content = ['A tarefa de reconhecimento de autoria tem sido estudada com sucesso através da representação de redes de adjacência de palavras. Nos últimos anos, a quantidade de textos disponíveis e de fácil acesso na Web revelou o potencial da análise de autoria em diferentes aplicações. Esta tarefa é bastante relevante dentro da área de processamento de línguas naturais contribuindo para diversos avanços na literatura, história, serviços de inteligência, computação forense e também em investigações criminais ou até mesmo para interceptar mensagens terroristas. Outra aplicação se dá no contexto do plagiarismo, pois é possível identificar trechos de plágios e inconsistências estilísticas a partir da tarefa de verificação de autoria. A importância desta tarefa se torna ainda mais evidente também quando se deseja estimar a similaridade de textos.',
+  "The authorship recognition task has been successfully studied through the representation of words in adjacent networks. In the last few years, the amount of available and accessible text on the Web revealed the potential of authorship analysis in different applications. This task is very important in the natural language processing area, contributing to many advances in the literature, history, intelligence services, computer forensics, as well as in criminal investigations or even intercepting terrorist messages. Another application is in the context of plagiarism, it is possible to identify plagiarism and stylistic inconsistencies with the usage of an authorship verification task. The importance of this task becomes even more evident when one desires to estimate the similarity of texts."];
 
-$scope.production.firstContent = ["Por estar em um estágio inicial da pesquisa, esse projeto ainda não resultou em nenhuma publicação.  No próximo tópico, são apresentas algumas publicações relacionadas.","As we are at an early research stage, this project hasn't produced any publication yet. Take a look at the following topic to find some related publications."]
+  $scope.project.methodology = {};
+  $scope.project.methodology.development = {};
+  $scope.project.methodology.evaluation = {};
+  $scope.project.methodology.development.title = ["Metodologia de Desenvolvimento","Development Methodology"];
+  $scope.project.methodology.development.content = ["Durante o desenvolvimento deste projeto, redes complexas serão utilizadas para realizar a modelagem dos textos. Essa modelagem pode ser dividida em duas etapas, o pré-processamento do texto e a conexão de conceitos. Um procedimento tipicamente adotado em trabalhos de literatura é a extração das function words. Porém, em uma das etapas deste trabalho, as function words serão incluídas na construção da rede de palavras. Uma etapa do pré-processamento é a lematização. Essa etapa é feita com a utilização de um rotulador de classes gramaticais. Inicialmente, o rotulador de classes gramaticais a ser utilizado neste trabalho será o NLTK (Natural Language Toolkit). Após o pré-processamento, é necessário realizar a conexão de conceitos. Por ser formada por cadeias lineares de palavras, o modo mais simples de representar a linguagem escrita é conectar palavras adjacentes em uma rede de adjacência (ou de co-ocorrência).  Nesse tipo de rede, os vértices representam palavras e as arestas são estabelecidas entre palavras vizinhas. Um fator importante na modelagem de co-ocorrência refere-se à escolha do tamanho da janela de conexão de palavras.  Em uma das primeiras etapas deste trabalho, diferentes janelas de conexão serão utilizadas para a criação das redes de co-ocorrência. Além disso, em uma modelagem diferente, todas as palavras de uma sentença serão conectadas. Em uma outra etapa deste projeto, as medidas obtidas através da análise de redes complexas serão combinadas com medidas tradicionais de reconhecimento de autoria em um classificador hibrido.",
+  "During the development of this project, complex networks will be used to model the texts. This modeling process can be divided in two steps, the pre-processing and the word connection. A procedure typically used in the literature is the extraction of function words. However, in one stage of this project, the function words will be included in the network construction. A pre-processing step is the lemmatization of the words. This step is performed with the use of a labeler of grammatical classes. Initially, the labeler of grammatical classes to be used in this work will be NLTK (Natural Language Toolkit). After the pre-processing step, it is necessary to connect the words. Because the language is formed by linear chains of words, the simplest way to represent written language is to connect adjacent words in a adjacency network (or co-occurrence network). In this type of network, the vertices represent words and the edges are created between neighboring words. An important factor in co-occurrence modeling refers to the choice of the connection window size. In one of the first steps of this project, different connection window sizes will be used to create the co-occurrence networks. Moreover, in a different modeling, all the words of a sentence will be connected. In another stage of this project, the measures obtained through the complex network analysis will be combined with traditional measures in a hybrid classifier."];
+  $scope.project.methodology.evaluation.title = ["Metodologia de Avaliação","Evaluation Methodology"];
+  $scope.project.methodology.evaluation.content = ["As alterações na modelagem de co-ocorrência tradicional, assim como o classificador híbrido desenvolvido, serão avaliados com o uso de diversos algoritmos de reconhecimento de padrões, como Naive Bayes, Support Vector Machines e kNN (k Nearest Neighbors). Com o uso desses algoritmos, pretende-se avaliar a taxa de acerto da tarefa de reconhecimento de autoria.",
+"The modifications in the traditional modelling, together with the hybrid classifier, will be evaluated with the use of different recognition pattern algorithms, like Naive Bayes, Support Vector Machines and kNN (k Nearest Neighbors). With the use of these algorithms, we aim to evaluate the rate success of the authorship recognition task."];
+
+$scope.production.firstContent = ["Por estar em um estágio inicial da pesquisa, esse projeto ainda não resultou em nenhuma publicação.","As we are at an early research stage, this project hasn't produced any publication yet."];
 $scope.production.secondContent = ["A seguir, alguns artigos, teses e dissertações relacionados ao projeto são apresentados.  Vale a pena destacar que muitos desses trabalhos são do professor Dr. Diego Amancio.", "In this topic, some publications, theses and dissertations related to this project are presented. It is worth noting that many of these works are results of Professor Diego Amancio’s research work."];
 
+$scope.resources = {};
+$scope.resources.description = ["Esta página contém alguns recursos criados durante este projeto, como planilhas, apresentações e os futuros documentos de qualificação e dissertação de mestrado.",
+"This page will store some resources created during this project, like spreedsheets, presentations, Vanessa’s future qualification document and Dissertation."];
+$scope.resources.resource1 = ["Lista dos 50 livros de diferentes autores que serão utilizados na primeira etapa desse projeto (Avaliação do tamanho da janela de conexão)",
+"List of the 50 books from different authors that will be used in the first stage of this project (Evaluating the connection window size)"];
+$scope.resources.resource2 = ["Arquivo com oito medidas calculadas em uma pequena amostra de 5 livros, utilizando diferentes janelas de conexão",
+"A file with eight network measurements calculated in a small sample of 5 books, using different connection window sizes"];
+$scope.resources.resource3 = ["O projeto submetido no pedido de bolsa de Mestrado da FAPESP",
+"The project submitted to apply for a Fapesp scholarship"];
 
 $scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and their application on Natural Language Processing, we suggest the following books:"];
 $scope.links.sample = ["Algumas páginas do livro estão disponíveis ","A sample of the book is available "];
@@ -112,7 +146,7 @@ $scope.links.conclusion = ["Para finalizar, outro aspecto interessante dessa apl
   var scroll = function(){
 
    $('html, body').animate({
-          scrollTop: $("#pageContent").offset().top
+          scrollTop: $("#pageContent").offset().top - 10
     }, 500);
   }
   
@@ -171,6 +205,36 @@ $("#home").click(function(e){
     $("#publications").click(function(e){
       $scope.clickedValue = 5;
       $scope.$apply();
+      scroll();
+  });
+
+    $("#resources").click(function(e){
+      $scope.clickedValue = 6;
+      $scope.$apply();
+      scroll();
+  });
+
+     $("#contact").click(function(e){
+      $scope.clickedValue = 7;
+      $scope.$apply();
+      if($scope.imageLoaded == false){
+        var mapCanvas = document.getElementById('map-canvas');
+        var position =new google.maps.LatLng(-22.0075349,-47.8953675);
+        var mapOptions = {
+            center: position,
+            zoom: 15,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: 'NILC'
+        });
+        $scope.imageLoaded = true;
+      }
       scroll();
   });
 }]);

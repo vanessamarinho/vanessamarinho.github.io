@@ -26,6 +26,7 @@
     <script src="js/angular.min.js"></script>
 	<script src="js/mypage.js"></script>
     <script src="js/angular-fullscreen.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 	
 </head>
 
@@ -45,6 +46,9 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" style="float: left">
+                    <li><i class="fa fa-home fa-2x" style="color:white; margin-top: 10px; margin-left: 10px;" id="home"></i></li>
+                </ul>
                 <ul class="nav navbar-nav" style="float: right">
                     <li>
                         <a href="#" id="research">{{menu.research[language]}}</a>
@@ -53,13 +57,19 @@
                         <a href="#" id="people">{{menu.people[language]}}</a>
                     </li>
                     <li>
-                        <a href="#" id="results">{{menu.results[language]}}</a>
-                    </li>
-                    <li>
                         <a href="#" id="publications">{{menu.publications[language]}}</a>
                     </li>
                     <li>
+                        <a href="#" id="resources">{{menu.resources[language]}}</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#" id="results">{{menu.results[language]}}</a>
+                    </li> -->
+                    <li>
                         <a href="#" id="interesting">{{menu.interesting[language]}}</a>
+                    </li>
+                    <li>
+                        <a href="#" id="contact">{{menu.contact[language]}}</a>
                     </li>
 					<li class="english"  style="padding-top: 13px;">
 						<span>
@@ -67,7 +77,6 @@
 						<a id="portuguese" style="display:inline-block"><img src="portuguese.png"></a>
 						</span>
                     </li>
-                    <li><i class="fa fa-home fa-2x" style="color:white; margin-top: 10px; margin-left: 10px;" id="home"></i></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -87,23 +96,29 @@
 
     <!-- Page Content -->
     <div class="container" id="pageContent">
+        <!-- HOME PAGE -->
         <div class="row" ng-if="clickedValue ==0"> 
-            <hr>
             <div class="col-sm-10 col-sm-offset-1">
+                <br/>
                 <h2>{{project.summary.title[language]}}</h2>
+                <hr>
                 <p>{{project.summary.content[language]}}</p>
                 {{project.summary.moreInfo[language]}} <a href="#" ng-click="research()">{{words.here[language]}}</a>
             </div>
         </div>
-        
+        <!-- RESEARCH -->
         <div class="row" ng-if="clickedValue ==1"> 
-            <hr>
             <div class="col-sm-10 col-sm-offset-1">
+                <br/>
                 <h2>{{project.information[language]}}</h2>
+                <hr>
                 <br/>
                 <ol>
                 <li><h4><b>{{project.title.title[language]}}</b></h4></li>
                 <p>{{project.title.content[language]}}</p>
+                <li><h4><b>{{project.date.title[language]}}</b></h4></li>
+                <p><b>{{project.date.subtitle1[language]}}: </b>{{project.date.content1[language]}}</p>
+                <p><b>{{project.date.subtitle2[language]}}: </b>{{project.date.content2[language]}}</p>
                 <li><h4><b>{{project.theme.title[language]}}</b></h4>
                 	<p>1. {{project.theme.content[language][0]}} <br/>
                 	&nbsp; 1.1. {{project.theme.content[language][1]}} <br/>
@@ -130,17 +145,24 @@
 
                 <li><h4><b>{{project.summary.title[language]}}</b></h4></li>
                 <p>{{project.summary.content[language]}}</p>
+
+                 <li><h4><b>{{project.methodology.development.title[language]}}</b></h4></li>
+                <p>{{project.methodology.development.content[language]}}</p>
+
+                 <li><h4><b>{{project.methodology.evaluation.title[language]}}</b></h4></li>
+                <p>{{project.methodology.evaluation.content[language]}}</p>
+
                 </ol>
                 <p><b>*</b> - {{project.footnote[language][0]}}</p>
                 <p><b>**</b> - {{project.footnote[language][1]}}</p>
             </div>
         </div>
-
+        <!-- PEOPLE -->
         <div class="row" ng-if="clickedValue ==2"> 
-            <hr>
 			<div class="col-sm-10 col-sm-offset-1">
-                <h2>{{menu.people[language]}}</h2>
                 <br/>
+                <h2>{{menu.people[language]}}</h2>
+                <hr>
 				<div class="col-sm-4">
 					<img class="img-circle img-responsive img-center" src="diego2.png"  alt="">
                     <h2>Diego Amancio</h2>
@@ -167,11 +189,12 @@
                 </div>
 			</div>
         </div>
-
+        <!-- FIRST RESULTS -->
         <div class="row" ng-if="clickedValue ==3"> 
-            <hr>
             <div class="col-sm-10 col-sm-offset-1">
+                <br/>
                 <h2>{{words.firstResults[language]}}</h2>
+                <hr>
                 
                 <img src="booksList.png" class="image" style="width:550px;" fullscreen>
             </div>
@@ -179,9 +202,10 @@
 
         <!-- LINKS -->
         <div class="row" ng-if="clickedValue ==4"> 
-            <hr>
             <div class="col-sm-10 col-sm-offset-1">
+                <br/>
                 <h2>{{words.interestingLinks[language]}}</h2>
+                <hr>
                 <h3>{{words.books[language]}}</h3>
                 <p>{{links.books[language]}}</p>
                 <ul>
@@ -208,14 +232,43 @@
         </div>
         <!-- ARTIGOS -->
         <div class="row" ng-if="clickedValue ==5"> 
-            <hr>
             <div class="col-sm-10 col-sm-offset-1">
+                <br/>
                 <h2>{{words.production[language]}}</h2>
+                <hr>
                 <p>{{production.firstContent[language]}}</p>
                 <br/>
-                <h2>{{words.relatedPublication[language]}}</h2>
-                <p>{{production.secondContent[language]}}</p>
-                <i><a href= "http://arxiv.org/abs/1112.6045" target= "_blank">Comparing intermittency and network measurements of words and their dependency on authorship</a></i>
+                
+            </div>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="row" ng-if="clickedValue ==6"> 
+            <div class="col-sm-10 col-sm-offset-1">
+                <br/>
+                <h2>{{words.resources[language]}}</h2>
+                <hr>
+                <p>{{resources.description[language]}}</p>
+                <br/>
+                 <ol>
+                        <li>{{resources.resource1[language]}} - <a href="booksList.xlsx" target="_blank">Download</a></li><br/>
+                        <li>{{resources.resource2[language]}} - <a href="Results.pdf" target="_blank">Download</a></li><br/>
+                        <li>{{resources.resource3[language]}} - <a href="FAPESP.pdf" target="_blank;">Download</a></li><br/>
+                 </ol>
+            </div>
+        </div>
+        <!-- CONTACT -->
+        <div class="row" ng-show="clickedValue ==7"> 
+            <div class="col-sm-10 col-sm-offset-1">
+                <br/>
+                <h2>{{words.contact[language]}}</h2>
+                <hr>
+                <b><h3>{{words.nilc[language]}} - NILC</h3></b>
+                <p>Instituto de Ciências Matemáticas e de Computação (ICMC) - {{words.usp[language]}}</p>
+                <p><i class="fa fa-map-marker"></i> Avenida Trabalhador são-carlense, 400 - Centro. São Carlos - SP - {{words.brasil[language]}}</p>
+                <p>{{words.room[language]}}: 1-114</p>
+                <p><i class="fa fa-phone"></i> +55 (16) 3373-9628</p>
+                <div id="map-canvas"></div>
             </div>
         </div>
 
