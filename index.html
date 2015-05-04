@@ -100,10 +100,15 @@
         <div class="row" ng-if="clickedValue ==0"> 
             <div class="col-sm-10 col-sm-offset-1">
                 <br/>
-                <h2>{{project.summary.title[language]}}</h2>
+                <h2>{{words.summary[language]}}</h2>
                 <hr>
-                <p>{{project.summary.content[language]}}</p>
-                {{project.summary.moreInfo[language]}} <a href="#" ng-click="research()">{{words.here[language]}}</a>
+                <p><b>{{words.context[language]}}:</b> {{project.summary.context[language]}}</p>
+                <p><b>{{project.problem.title[language]}}:</b> {{project.summary.gap[language]}}</p>
+                <p><b>{{project.goal.title[language]}}:</b> {{project.summary.goal[language]}}</p>
+                <p><b>{{words.methods[language]}}:</b> {{project.summary.methods[language]}}</p>
+                <p><b>{{words.expectedResults[language]}}:</b> {{project.summary.expectedResults[language]}}</p>
+                <hr>
+                <b>{{project.summary.moreInfo[language]}} <a href="#" ng-click="research()">{{words.here[language]}}</a> </b>
             </div>
         </div>
         <!-- RESEARCH -->
@@ -143,14 +148,18 @@
                 <li><h4><b>{{project.motivation.title[language]}}</b></h4></li>
                 <p>{{project.motivation.content[language]}}</p>
 
-                <li><h4><b>{{project.summary.title[language]}}</b></h4></li>
-                <p>{{project.summary.content[language]}}</p>
-
                  <li><h4><b>{{project.methodology.development.title[language]}}</b></h4></li>
                 <p>{{project.methodology.development.content[language]}}</p>
 
                  <li><h4><b>{{project.methodology.evaluation.title[language]}}</b></h4></li>
                 <p>{{project.methodology.evaluation.content[language]}}</p>
+
+                <li><h4><b>{{project.summary.title[language]}}</b></h4></li>
+                <p><b>{{words.context[language]}}:</b> {{project.summary.context[language]}}</p>
+                <p><b>{{project.problem.title[language]}}:</b> {{project.summary.gap[language]}}</p>
+                <p><b>{{project.goal.title[language]}}:</b> {{project.summary.goal[language]}}</p>
+                <p><b>{{words.methods[language]}}:</b> {{project.summary.methods[language]}}</p>
+                <p><b>{{words.expectedResults[language]}}:</b> {{project.summary.expectedResults[language]}}</p>
 
                 </ol>
                 <p><b>*</b> - {{project.footnote[language][0]}}</p>
