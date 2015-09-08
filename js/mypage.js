@@ -135,8 +135,6 @@ $scope.resources.resource2 = ["Arquivo com oito medidas calculadas em uma pequen
 "A file with eight network measurements calculated in a small sample of 5 books, using different connection window sizes"];
 $scope.resources.resource3 = ["O projeto submetido no pedido de bolsa de Mestrado da FAPESP",
 "The project submitted to apply for a Fapesp scholarship"];
-$scope.resources.resource4 = ["Resultados do artigo para a disciplina de Aprendizado de Maquina",
-"Results of the paper from the Machine Learning course"];
 
 $scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and their application on Natural Language Processing, we suggest the following books:"];
 $scope.links.sample = ["Algumas páginas do livro estão disponíveis ","A sample of the book is available "];
@@ -168,7 +166,7 @@ $scope.links.conclusion = ["Para finalizar, outro aspecto interessante dessa apl
   }
   
   /*0 stands for portuguese*/
-  $scope.language = 0;
+  $scope.language = 1;
 
   $scope.research = function(){
     $scope.clickedValue = 1;
