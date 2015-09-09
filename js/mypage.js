@@ -16,8 +16,8 @@
   $scope.words.firstResults = ['Resultados Preliminares', 'First Results'];
   $scope.words.production = ["Produção Bibliográfica", "Bibliographical Production"];
   $scope.words.relatedPublication = ["Publicações Relacionadas","Related Publications"];
-  $scope.words.student= ["Aluna de Mestrado","Master's candidate"];
-  $scope.words.studentM= ["Aluno de Mestrado","Master's candidate"];
+  $scope.words.student= ["Aluna de Mestrado","Master's student"];
+  $scope.words.studentM= ["Aluno de Mestrado","Master's student"];
   $scope.words.supervisor= ["Orientador","Supervisor"];
   $scope.words.interestingLinks = ["Outros Links","Other Links"];
   $scope.words.books = ["Livros","Books"];
