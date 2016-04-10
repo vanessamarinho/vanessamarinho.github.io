@@ -34,11 +34,17 @@
   $scope.words.context = ["Contexto","Context"];
   $scope.words.methods = ["Métodos","Methods"];
   $scope.words.expectedResults = ["Resultados Esperados","Expected Results"];
-  $scope.words.summary = ["Resumo do Projeto", "Project Summary"];
+  $scope.words.summary = ["Sobre mim", "About me"];
+  $scope.words.education = ["Formação","Education"];
+  $scope.words.languages = ["Linguagens", "Languages"];
   
   $scope.clickedValue = 0;
+
+    //Words
+  $scope.about = {};
+  $scope.about.me = ["Se quiser saber mais, baixe o meu currículo ou visite o meu perfil no Linkedin","If you want to know more, download my CV or go to my Linkedin profile."]
   
-  $scope.menu.research = ['Pesquisa','Research'];
+  $scope.menu.research = ['Pesquisa','My Research'];
   $scope.menu.people = ['Pessoas','People'];
   $scope.menu.interesting = ['Links','Links'];
   $scope.menu.results = ["Resultados","Results"];
@@ -55,7 +61,7 @@
   "Master's candidate at University of São Paulo. Edilson did his undergraduate course in Computer Science at Centro Universitário de Formiga (UNIFOR-MG). His Master’s project also uses complex networks applied to NLP."];
   
   $scope.page = {}
-  $scope.page.title=['Reconhecimento de Autoria com Redes Complexas','Authorship Recognition with Complex Networks'];
+  $scope.page.title=['Vanessa Queiroz Marinho','Vanessa Queiroz Marinho'];
 
   $scope.project.summary = {};
   $scope.project.summary.title=['Resumo', 'Summary'];
@@ -72,7 +78,7 @@
 
   $scope.project.summary.moreInfo = ["Obs.: Mais informações sobre o projeto estão disponíveis na opção 'Pesquisa' do menu acima ou clicando ", "PS.: More information about the project is available at the option 'Research' in the above menu or clicking "];
 
-  $scope.project.information = ['Projeto de Pesquisa','Research Project'];
+  $scope.project.information = ['Projeto de Pesquisa','My Research Project'];
 
   $scope.project.footnote = [['Nas redes de adjacência convencionais, apenas palavras vizinhas são conectadas.','Tais palavras são úteis em estratégias tradicionais de reconhecimento de autoria não baseadas em grafos.'],["In standard adjacency networks, only neighboring words are connected.","These words are useful in traditional strategies of authorship recognition not based on graphs."]];
 
@@ -128,35 +134,31 @@ $scope.production.secondContent = ["A seguir, alguns artigos, teses e dissertaç
 
 $scope.resources = {};
 $scope.resources.description = ["Esta página contém alguns recursos criados durante este projeto, como planilhas, apresentações e os futuros documentos de qualificação e dissertação de mestrado.",
-"This page will store some resources created during this project, like spreedsheets, presentations, Vanessa’s future qualification document and Dissertation."];
-$scope.resources.resource1 = ["Lista dos 50 livros de diferentes autores que serão utilizados na primeira etapa desse projeto (Avaliação do tamanho da janela de conexão)",
-"List of the 50 books from different authors that will be used in the first stage of this project (Evaluating the connection window size)"];
-$scope.resources.resource2 = ["Arquivo com oito medidas calculadas em uma pequena amostra de 5 livros, utilizando diferentes janelas de conexão",
-"A file with eight network measurements calculated in a small sample of 5 books, using different connection window sizes"];
+"This page will store some resources created during this project, like spreedsheets, presentations, qualification document and my future Dissertation."];
 $scope.resources.resource3 = ["O projeto submetido no pedido de bolsa de Mestrado da FAPESP",
 "The project submitted to apply for a Fapesp scholarship"];
 
 $scope.links.books = ["Para saber mais sobre redes complexas e suas aplicações em Processamento de Linguagens Naturais, sugerimos os livros apresentados a seguir:","To know more about complex networks and their application on Natural Language Processing, we suggest the following books:"];
 $scope.links.sample = ["Algumas páginas do livro estão disponíveis ","A sample of the book is available "];
 $scope.links.linkedInInitial = [" A imagem utilizada no topo deste site é uma rede real obtida através de conexões no LinkedIn. Essa imagem foi extraída a partir do perfil da estudante Vanessa Marinho, em 1º de Abril.  Cada vértice representa um usuário conectado com a Vanessa. Uma aresta é criada toda vez que dois usuários estão também conectados entre si. A imagem completa é apresentada abaixo. ",
-"The header image from this website is a real network extracted from LinkedIn connections. This image was extracted at April, 1st from Vanessa Marinho LinkedIn profile. Each node represents a user connected to Vanessa through the social media, a link is created everytime two users are connected to each other on LinkedIn. The complete image is presented below. "];
+"The header image from this website is a real network extracted from LinkedIn connections. This image was extracted at April, 1st from my LinkedIn profile. Each node represents a user connected with me through the social media, a link is created everytime two users are connected to each other on LinkedIn. The complete image is presented below. "];
 $scope.links.linkedInMiddle = {};
 $scope.links.linkedInMiddle.firstContent = ["A rede foi extraída utilizando a aplicação ","The network was extracted using the aplication "];
 $scope.links.linkedInMiddle.secondContent = ["É necessário apenas conectar em seu perfil do LinkedIn e a aplicação irá criar sua rede social (esse processo pode levar alguns minutos). A aplicação também calcula algumas medidas em sua rede social, como densidade, tamanho absoluto e tamanho efetivo.",
-"You just need to sign in with your LinkedIn account and the application will create your social network (it may take a while). The application also calculates some measurements in your social network, like density, absolute size and effective size."];
+"You just need to sign in with your LinkedIn account and the application will create your social network (it might take a while). The application also calculates some measurements in your social network, like density, absolute size and effective size."];
 
 $scope.links.density = ["Este valor representa o número de conexões entre os contatos de um usuário dividido pelo número total de possíveis conexões. Valores próximos a 100% significam que todos (ou quase todos) os contatos estão ligados entre si. Por outro lado, valores próximos a 0 indicam um grande número de contatos desconexos uns dos outros. O valor calculado para a rede da Vanessa Marinho foi 11.4%",
-"This value represents the number of ties between a user’s contacts divided by the total number of possible ties. If you get a value closer to 100%, it means that all the contacts know each other. On the other hand, as the value approaches to 0%, it means all of your contacts are disconnected from each other. The value calculated in Vanessa`s network was 11.4%"];
+"This value represents the number of ties between a user’s contacts divided by the total number of possible ties. If you get a value closer to 100%, it means that all the contacts know each other. On the other hand, as the value approaches to 0%, it means all of your contacts are disconnected from each other. The value calculated in my network was 11.4%"];
 $scope.links.absolute = ["O número total de contatos que um usuário no LinkedIn possui. Este não é um valor muito representativo. A informação e oportunidades disponíveis em uma rede social estão mais relacionadas com a estrutura das conexões entre os contatos do que com o número total de contatos. O valor calculado para a rede da Vanessa foi 195, no dia 1º de Abril.",
-"The total number of contacts a LinkedIn user has. It is not a value really useful. The information and opportunities in a social network are correlated with the structure of the ties between the contacts, not with their raw number. In Vanessa`s network, this value was 195 at April 1st."];
+"The total number of contacts a LinkedIn user has. It is not a value really useful. The information and opportunities in a social network are correlated with the structure of the ties between the contacts, not with their raw number. In my network, this value was 195 at April 1st."];
 $scope.links.effective = ["Representa o tamanho efetivo de elementos na rede de um usuário. Em uma rede social, nem todo contato adiciona o mesmo valor para a rede. Algumas conexões entre usuários são redundantes. Portanto, essas conexões não estão verdadeiramente adicionando informação. Esta medida fornece uma estimativa do número único de clusters (grupos) que o usuário está conectado. O valor calculado para a rede da Vanessa foi 106.5, no dia 1º de Abril.",
-"The ‘effective’ size of a user’s network. In a social network, not every contact adds the same value to the network. Some ties between users are 'redundant'. Therefore, these ties are not actually providing extra information. This measure gives an estimate of the unique number of clusters a user is connected to. In Vanessa`s network, this value was 106.5 at April 1st."];
+"The ‘effective’ size of a user’s network. In a social network, not every contact adds the same value to the network. Some ties between users are 'redundant'. Therefore, these ties are not actually providing extra information. This measure gives an estimate of the unique number of clusters a user is connected to. In my network, this value was 106.5 at April 1st."];
 $scope.links.contentTitle = ["Nós Isolados","Isolated Nodes"];
 $scope.links.finalContent = ["Na aplicação Socilab, também é possível visualizar o nome dos contatos na rede. Com isso, torna-se interessante olhar para os vértices isolados do grande cluster (formado principalmente por pessoas da área ou relacionadas à Ciência da Computação). No canto superior direito da imagem, há dois vértices conectados entre si. Estes vértices representam dois familiares da Vanessa, ambos formados em Odontologia. Nesta rede, a maioria dos vértices isolados (sem nenhuma conexão) é formada por colegas do ensino médio. Interessantemente, o vértice que faz o papel de `bridge` é também um contato do ensino médio. ‘Bridges’ são responsáveis por conectar dois componentes em uma rede; nessa imagem, a ‘bridge’ conecta o grande cluster com o menor (totalmente formado por colegas do ensino médio).",
-"In the Socilab application, it is also possible to visualize the name of the contacts in the network. Using this, an interesting thing is to look to the vertices that are isolated from the big cluster (formed mainly by people from Computer Science or related areas). On the top right corner of the image, there are two nodes connected to each other. These nodes are Vanessa’s relatives, both graduated in Dentistry. In this network, most of the isolated nodes (not connecting to anyone) are colleagues from high school. Interestingly, the node that plays the ‘bridge’ role is also a contact from high school. ‘Bridges’ are responsible for connecting two components in a network; in that image, the ‘bridge’ connects the big cluster with a small one (formed totally by high school colleagues)."];
+"In the Socilab application, it is also possible to visualize the name of the contacts in the network. Using this, an interesting thing is to look to the vertices that are isolated from the big cluster (formed mainly by people from Computer Science or related areas). On the top right corner of the image, there are two nodes connected to each other. These nodes are my relatives, both graduated in Dentistry. In this network, most of the isolated nodes (not connected to anyone) are colleagues from high school. Interestingly, the node that plays the ‘bridge’ role is also a contact from high school. ‘Bridges’ are responsible for connecting two components in a network; in that image, the ‘bridge’ connects the big cluster with a small one (formed totally by high school colleagues)."];
  
 $scope.links.conclusion = ["Para finalizar, outro aspecto interessante dessa aplicação é a possibilidade de exportar um arquivo CSV com os dados da rede de contatos do LinkedIn. Esses dados podem depois ser utilizados em outros sistemas ou para o cálculo de outras medidas. ",
-"Another interesting thing on this application is the possibility to export a CSV file with the data from the LinkedIn network. This data can later be used in other systems and to extract other measurements. "];
+"Another interesting thing on this application is the possibility to export a CSV file with the data from the LinkedIn network. This data can later be used in different systems to extract other measurements. "];
 
   var scroll = function(){
 
@@ -170,6 +172,11 @@ $scope.links.conclusion = ["Para finalizar, outro aspecto interessante dessa apl
 
   $scope.research = function(){
     $scope.clickedValue = 1;
+    scroll();
+  }
+
+  $scope.contact = function(){
+    $scope.clickedValue = 7;
     scroll();
   }
   
@@ -187,6 +194,12 @@ $scope.links.conclusion = ["Para finalizar, outro aspecto interessante dessa apl
 
   
 $("#home").click(function(e){
+    $scope.clickedValue = 0;
+    $scope.$apply();
+    scroll();
+  });
+
+$("#home2").click(function(e){
     $scope.clickedValue = 0;
     $scope.$apply();
     scroll();

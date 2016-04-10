@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Research - Vanessa Marinho</title>
+    <title>Vanessa Marinho</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -50,29 +50,20 @@
                     <li><i class="fa fa-home fa-2x" style="color:white; margin-top: 10px; margin-left: 10px;" id="home"></i></li>
                 </ul>
                 <ul class="nav navbar-nav" style="float: right">
+                	<li>
+                        <a href="#" id="home2">About me</a>
+                    </li>
+                    <li>
+                        <a href="CV_VanessaMarinho.pdf" target="blank" id="home2">CV</a>
+                    </li>
                     <li>
                         <a href="#" id="research">{{menu.research[language]}}</a>
                     </li>
                     <li>
-                        <a href="#" id="people">{{menu.people[language]}}</a>
-                    </li>
-                    <li>
-                        <a href="#" id="resources">{{menu.resources[language]}}</a>
-                    </li>
-                    <!-- <li>
-                        <a href="#" id="results">{{menu.results[language]}}</a>
-                    </li> -->
-                    <li>
-                        <a href="#" id="interesting">{{menu.interesting[language]}}</a>
+                        <a href="#" id="resources">Resources and Links</a>
                     </li>
                     <li>
                         <a href="#" id="contact">{{menu.contact[language]}}</a>
-                    </li>
-					<li class="english"  style="padding-top: 13px;">
-						<span>
-						<a id="english" style="display:inline-block"><img src="english.png"></a>
-						<a id="portuguese" style="display:inline-block"><img src="portuguese.png"></a>
-						</span>
                     </li>
                 </ul>
             </div>
@@ -97,15 +88,38 @@
         <div class="row" ng-if="clickedValue ==0"> 
             <div class="col-sm-10 col-sm-offset-1">
                 <br/>
-                <h2>{{words.summary[language]}}</h2>
+                <h3>{{words.summary[language]}}</h3>
                 <hr>
-                <p><b>{{words.context[language]}}:</b> {{project.summary.context[language]}}</p>
-                <p><b>{{project.problem.title[language]}}:</b> {{project.summary.gap[language]}}</p>
-                <p><b>{{project.goal.title[language]}}:</b> {{project.summary.goal[language]}}</p>
-                <p><b>{{words.methods[language]}}:</b> {{project.summary.methods[language]}}</p>
-                <p><b>{{words.expectedResults[language]}}:</b> {{project.summary.expectedResults[language]}}</p>
+                <p>
+I'm currently an International Visiting Graduate Student (IVGS) in the Department of Computer Science at the University of Toronto, Canada. I started my Master's in March of 2015 in the Computational Linguistics group at the University of São Paulo, Brazil. I'll be visiting UofT
+until August 31st, when I'll return to Brazil to finish my program.</p>
+                <p>I'm interested in Natural Language Processing and Complex Networks, especially how both can be combined
+to tackle different tasks. I'm working with the development of new models for the authorship attribution and recognition task.</p>
+<p>My supervisor in Brazil is Diego Amancio and I've been supervised by
+<a href="http://www.cs.toronto.edu/~gh/" target="blank"> Graeme Hirst</a> in Canada.</p>
+				<br/>
+                <p>If you want to know more about me, please <a href="CV_VanessaMarinho.pdf" target="blank">download my CV</a>, go to my <a href="https://www.linkedin.com/in/vanessa-queiroz-marinho-63a69771" target="blank">Linkedin profile <i class="fa fa-linkedin-square fa-lg" href=></i></a> or <a href="#" ng-click="contact()">contact</a> me.</p>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+                <br/>
+                <h3>{{words.education[language]}}</h3>
                 <hr>
-                <b>{{project.summary.moreInfo[language]}} <a href="#" ng-click="research()">{{words.here[language]}}</a> </b>
+                <ul>
+                <li><b>2016 – Current: </b> <i>International Visiting Graduate Student  in Computer Science at the University of Toronto, Canada.</i> Currently working in the Computational Linguistics' group. Title: Authorship attribution with traditional methods and complex networks. </li>
+                <li><b>2015 – Current: </b> <i> Master’s Candidate in Computer Science at the University of São Paulo, Brazil. </i>Currently working with Natural Language Processing and Complex Networks with financial support from the São Paulo Research Foundation (Fapesp). Title: Development of new models for authorship recognition using complex networks.</li>
+                <li><b>2012 – 2013: </b> <i> Exchange Student in the Department of Computer Science at the University of Toronto, Canada.</i>  Exchange program sponsored by The National Council for Scientific and Technological Development (CNPq) from Brazil.</li>
+                <li><b>2009 – 2014: </b> <i> Bachelor Degree in Computer Science from the University of São Paulo, Brazil.</i> Average Grade: 8.7 (out of 10).</li>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+                <br/>
+                <h3>{{words.languages[language]}}</h3>
+                <hr>
+                <ul>
+                <li> <b>Portuguese</b> - Native </li>
+                <li> <b>English</b> - Fluent </li>
+                <li> <b>Spanish</b> - Basic </li>
+                <li> <b>French</b> - Basic </li>
+                </ul>
             </div>
         </div>
         <!-- RESEARCH -->
@@ -163,38 +177,6 @@
                 <p><b>**</b> - {{project.footnote[language][1]}}</p>
             </div>
         </div>
-        <!-- PEOPLE -->
-        <div class="row" ng-if="clickedValue ==2"> 
-			<div class="col-sm-10 col-sm-offset-1">
-                <br/>
-                <h2>{{menu.people[language]}}</h2>
-                <hr>
-				<div class="col-sm-4">
-					<img class="img-circle img-responsive img-center" src="diego2.png"  alt="">
-                    <h2>Diego Amancio</h2>
-                    <h5>{{words.supervisor[language]}}</h5>
-                    <p>{{people.diego[language]}}</p>
-                    <p><i class="fa fa-envelope-o"></i> &#100;&#105;&#101;&#103;&#111;&#064;&#105;&#099;&#109;&#099;&#046;&#117;&#115;&#112;&#046;&#098;&#114;</p>
-                    <a href="http://lattes.cnpq.br/8763967270082717" target="_blank"><img src="lattesS.png"> Lattes</a>
-				</div>
-				<div class="col-sm-4">
-                    <img class="img-circle img-responsive img-center" src="vanessap.png" alt="">
-                    <h2>Vanessa Marinho</h2>
-                    <h5>{{words.student[language]}}</h5>
-                    <p>{{people.vanessa[language]}}<p>
-                    <p><i class="fa fa-envelope-o"></i> &#118;&#097;&#110;&#101;&#115;&#115;&#097;&#113;&#109;&#064;&#117;&#115;&#112;&#046;&#098;&#114;</p>
-                    <a href="http://lattes.cnpq.br/5663426638420085" target="_blank"><img src="lattesS.png"> Lattes</a>
-				</div>
-                <div class="col-sm-4">
-                    <img class="img-circle img-responsive img-center" src="edilson.png" alt="">
-                    <h2>Edilson Corrêa</h2>
-                    <h5>{{words.studentM[language]}}</h5>
-                    <p>{{people.edilson[language]}}<p>
-                    <p><i class="fa fa-envelope-o"></i> &#101;&#100;&#105;&#108;&#115;&#111;&#110;&#097;&#099;&#106;&#114;&#064;&#117;&#115;&#112;&#046;&#098;&#114;</p>
-                    <a href="http://lattes.cnpq.br/5300150316107442" target="_blank"><img src="lattesS.png"> Lattes</a>
-                </div>
-			</div>
-        </div>
         <!-- FIRST RESULTS -->
         <div class="row" ng-if="clickedValue ==3"> 
             <div class="col-sm-10 col-sm-offset-1">
@@ -206,11 +188,24 @@
             </div>
         </div>
 
-        <!-- LINKS -->
-        <div class="row" ng-if="clickedValue ==4"> 
+        
+               
+        
+
+        <!-- RESOURCES -->
+        <div class="row" ng-if="clickedValue ==6"> 
             <div class="col-sm-10 col-sm-offset-1">
                 <br/>
-                <h2>{{words.interestingLinks[language]}}</h2>
+                <h2>{{words.resources[language]}}</h2>
+                <hr>
+                <p>{{resources.description[language]}}</p>
+                <br/>
+                 <ol>
+                        <li> The project submitted to apply for an IVGS position at University of Toronto - <a href="VanessaMarinhoWorkProposal.pdf" target="_blank;">Download</a></li><br/>
+                        <li> Qualification document presented to a committee in February, 2016 (Only the abstract is written in English) - <a href="qualification_exam.pdf" target="_blank;">Download</a></li><br/>
+                        <li> Presentation of my research field and some of my results - <a href="VanessaMarinho_currentWork.pdf" target="_blank;">Download</a></li><br/>
+                 </ol>
+                 <h2>{{words.interestingLinks[language]}}</h2>
                 <hr>
                 <h3>{{words.books[language]}}</h3>
                 <p>{{links.books[language]}}</p>
@@ -236,35 +231,25 @@
                 <p>{{links.conclusion[language]}}</p>
             </div>
         </div>
-        
-
-        <!-- RESOURCES -->
-        <div class="row" ng-if="clickedValue ==6"> 
-            <div class="col-sm-10 col-sm-offset-1">
-                <br/>
-                <h2>{{words.resources[language]}}</h2>
-                <hr>
-                <p>{{resources.description[language]}}</p>
-                <br/>
-                 <ol>
-                        <li>{{resources.resource1[language]}} - <a href="booksList.xlsx" target="_blank">Download</a></li><br/>
-                        <li>{{resources.resource2[language]}} - <a href="Results.pdf" target="_blank">Download</a></li><br/>
-                        <li>{{resources.resource3[language]}} - <a href="FAPESP.pdf" target="_blank;">Download</a></li><br/>
-                 </ol>
-            </div>
-        </div>
         <!-- CONTACT -->
         <div class="row" ng-show="clickedValue ==7"> 
             <div class="col-sm-10 col-sm-offset-1">
                 <br/>
                 <h2>{{words.contact[language]}}</h2>
                 <hr>
-                <b><h3>{{words.nilc[language]}} - NILC</h3></b>
+                <p> The best way to reach me is by email: vanessa9[AT]cs.toronto.edu or vanessa.qm.1[AT]gmail.com </p>
+                <br/>
+                <b><h4>Artificial Intelligence Lab (Current Office)</h4></b>
+                <p>Computer Science Department - University of Toronto</p>
+                <p><i class="fa fa-map-marker"></i> 6 King's College Road. Toronto - ON - Canada</p>
+                <p>{{words.room[language]}}: PT271</p>
+                
+                <hr>
+                <b><h4>{{words.nilc[language]}} - NILC</h4></b>
                 <p>Instituto de Ciências Matemáticas e de Computação (ICMC) - {{words.usp[language]}}</p>
                 <p><i class="fa fa-map-marker"></i> Avenida Trabalhador são-carlense, 400 - Centro. São Carlos - SP - {{words.brasil[language]}}</p>
                 <p>{{words.room[language]}}: 1-114</p>
                 <p><i class="fa fa-phone"></i> +55 (16) 3373-9628</p>
-                <div id="map-canvas"></div>
             </div>
         </div>
 
@@ -275,7 +260,8 @@
                 <div class="col-lg-10">
                 	<p class="col-sm-2 col-sm-offset-1"><b>{{words.thanks[language]}} </b></p>
                     <img src="brasao_usp.jpg" class="col-sm-2"/>
-                    <img src="capes.png" class="col-sm-2"/>
+                    <img src="utoronto.png" class="col-sm-2"/>
+                    <img src="fapesp.png" class="col-sm-2"/>
                     <img src="nilc.png" class="col-sm-2" style="margin-top:10px; margin-left: 14px;"/>
                 </div>
             </div>
